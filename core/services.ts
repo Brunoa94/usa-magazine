@@ -9,12 +9,7 @@ export default class Services{
 
     public async getHeadlines(category?: string, country?: string){
         const url = `https://newsapi.org/v2/top-headlines?pageSize=100&country=${country}&apiKey=${this.apiKey}${category ? `&category=${category}` : ''}`;
-        
-        if(category === undefined){
-            return [];
-        }
-
-        const result = await this.makeCall(`/responses/${category}.json`);
+        const result = await this.makeCall(`/responses/${category ? category : "general"}.json`);
         const articles = (result["articles"] as Article[]).filter(item => {
             return (item.author !== null && item.title !== null && item.urlToImage !== null)
         });
