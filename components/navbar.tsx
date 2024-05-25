@@ -130,7 +130,6 @@ const Navbar = () => {
 
   const handleKeyPress = (event: any) => {
     if (event.key === "Enter") {
-      console.log("ENTREI");
       router.push(`/search?q=${searchInput}`);
     }
   };

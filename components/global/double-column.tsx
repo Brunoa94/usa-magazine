@@ -12,7 +12,7 @@ const DoubleColumn = (props: Props) => {
   return (
     <div className={`flex flex-col w-full`}>
       {props.title && <span className="font-bold mb-4">{props.title}</span>}
-      <div className="flex items-start flex-wrap space-y-4 md:space-y-0 md:grid-cols-2 md:flex-nowrap md:gap-4">
+      <div className="flex items-start flex-wrap space-y-4 md:space-y-0 md:grid-cols-2 md:px-4 md:flex-nowrap md:gap-4">
         <VerticalBigCard
           author={props.articles[0].author}
           mainText={props.articles[0].title}

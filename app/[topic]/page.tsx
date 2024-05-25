@@ -49,7 +49,7 @@ export default function Topic() {
                 />
               ))}
             </div>
-            <div className="w-full px-4 md:px-0">
+            <div className="w-full px-4 md:px-4">
               <VerticalBigCard
                 author={articles[4].author}
                 mainText={articles[4].title}
@@ -58,7 +58,7 @@ export default function Topic() {
                 imgUrl={articles[4].urlToImage}
               />
             </div>
-            <div className="flex flex-col space-y-4 w-full px-4 md:px-0 md:space-y-0 md:max-w-[250px] md:flex-row md:flex-wrap md:gap-4 lg:w-fit">
+            <div className="flex flex-col space-y-4 w-full px-4 md:space-y-0 md:flex-row md:flex-wrap md:gap-4 lg:w-fit lg:max-w-[250px]">
               {articles.slice(5, 9).map((item) => (
                 <TextCard
                   title={item.title}
@@ -88,7 +88,7 @@ export default function Topic() {
             />
           </div>
           <Separator />
-          <div className="flex flex-col space-y-4 w-full px-4 md:px-0 md:space-y-0 md:flex-row md:flex-wrap md:gap-4 lg:w-fit">
+          <div className="flex flex-col space-y-4 w-full px-4 md:px-4 md:space-y-0 md:flex-row md:flex-wrap md:gap-4 lg:w-fit">
             {articles.slice(14, 19).map((item) => (
               <TextCard
                 title={item.title}
