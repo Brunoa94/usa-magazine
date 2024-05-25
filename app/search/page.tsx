@@ -3,7 +3,7 @@ import SearchCard from "@/components/cards/search-card";
 import { Article } from "@/core/models/article";
 import Services from "@/core/services";
 import { useSearchParams } from "next/navigation";
-import React, { useEffect, useState } from "react";
+import React, { Suspense, useEffect, useState } from "react";
 
 const Search = () => {
   const searchParams = useSearchParams();

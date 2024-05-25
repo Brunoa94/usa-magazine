@@ -5,6 +5,7 @@ import Navbar from "@/components/navbar";
 import Footer from "@/components/global/footer";
 import { Provider } from "react-redux";
 import StoreProvider from "./StoreProvider";
+import { Suspense } from "react";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -21,11 +22,13 @@ export default function RootLayout({
   return (
     <html lang="en" data-theme="light">
       <body className={`flex flex-col items-center`}>
-        <StoreProvider>
-          <Navbar />
-          <div className="w-full flex flex-col items-center">{children}</div>
-          <Footer />
-        </StoreProvider>
+        <Suspense>
+          <StoreProvider>
+            <Navbar />
+            <div className="w-full flex flex-col items-center">{children}</div>
+            <Footer />
+          </StoreProvider>
+        </Suspense>
       </body>
     </html>
   );
