@@ -1,4 +1,5 @@
 import { Article } from "./models/article";
+import { responses } from "./responses";
 
 export default class Services{
     private apiKey: string;
@@ -9,7 +10,9 @@ export default class Services{
 
     public async getHeadlines(category?: string, country?: string){
         const url = `https://newsapi.org/v2/top-headlines?pageSize=100&country=${country}&apiKey=${this.apiKey}${category ? `&category=${category}` : ''}`;
-        const result = await this.makeCall(`/responses/${category ? category : "general"}.json`);
+        const isStatic = ["business", "entertainment", "general", "health", "sports", "technology"]
+
+        const result : any = (category && isStatic.includes(category)) ? responses[category] : await this.makeCall(url);
         const articles = (result["articles"] as Article[]).filter(item => {
             return (item.author !== null && item.title !== null && item.urlToImage !== null)
         });

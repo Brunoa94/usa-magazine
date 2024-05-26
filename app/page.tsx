@@ -25,7 +25,7 @@ async function getNews(country: string, category?: string) {
 }
 
 export default async function Home() {
-  const headline: Article = await getHeadline("us");
+  const headline: Article = await getHeadline("us", "general");
   const news: Article[] = await getNews("us", "general");
   const sports: Article[] = await getNews("us", "sports");
   const business: Article[] = await getNews("us", "business");
